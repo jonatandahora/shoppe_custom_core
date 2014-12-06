@@ -10,18 +10,24 @@
         %dd= f.text_field :last_name, :class => 'text'
   = field_set_tag t("shoppe.users.login") do
     .splitContainer
-      %dl.third
+      %dl.half
         %dt= f.label :email_address, t('shoppe.users.email')
         %dd= f.text_field :email_address, :class => 'text'
-      %dl.third
+      %dl.half
+        %dt= f.label :is_admin, 'User privilege'
+        %dd.checkbox
+          = f.check_box :is_admin
+          = f.label :is_admin, 'Is Admin?'
+    .splitContainer
+      %dl.half
         %dt= f.label :password, t('shoppe.users.password')
         %dd= f.password_field :password, :class => 'text'
-      %dl.third
+      %dl.half
         %dt= f.label :password_confirmation, t('shoppe.users.password_confirmation')
         %dd= f.password_field :password_confirmation, :class => 'text'
 
   %p.submit
     - unless @user.new_record?
-      %span.right= link_to t('shoppe.delete'), @user, :class => 'button purple', :method => :delete, :data => {:confirm => t('shoppe.users.delete_confirmation')}
-    = f.submit  t('shoppe.submit'), :class => 'button green'
+      %span.right= link_to 'Delete', @user, :class => 'button purple', :method => :delete, :data => {:confirm => 'Are you sure?'}
+    = f.submit  'send', :class => 'button green'
     = link_to t('shoppe.cancel'), :users, :class => 'button'
