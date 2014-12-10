@@ -1,14 +1,4 @@
 = field_set_tag t('shoppe.orders.billing_address') do
-  .splitContainer
-    %dl.third
-      %dt= f.label :first_name, t('shoppe.orders.first_name')
-      %dd= f.text_field :first_name, :class => 'focus text'
-    %dl.third
-      %dt= f.label :last_name, t('shoppe.orders.last_name')
-      %dd= f.text_field :last_name, :class => 'text'
-    %dl.third
-      %dt= f.label :company, t('shoppe.orders.company')
-      %dd= f.text_field :company, :class => 'text'
   %dl
     %dt= f.label :billing_address1, t('shoppe.orders.address')
     %dd.space= f.text_field :billing_address1, :class => 'text'
