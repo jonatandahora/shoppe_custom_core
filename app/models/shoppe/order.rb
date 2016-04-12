@@ -53,6 +53,14 @@ module Shoppe
       company
     end
 
+    # The full name of the customer created by concatinting the first & last name
+    #		
+    # @return [String]
+    def full_name
+      "#{first_name} #{last_name}"
+    end
+
+
     # Is this order empty? (i.e. doesn't have any items associated with it)
     #
     # @return [Boolean]
